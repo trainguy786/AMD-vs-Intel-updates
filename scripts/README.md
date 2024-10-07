@@ -8,7 +8,7 @@ All you need to do is:
 5) That's it.
 Of course you will need to add a Systemd user service in order for it to be fully autonomous, but I won't be covering that here.
 ## Here's what it can do in simple terms:
-1) First it stores the value from `cat /sys/class/power_supply/AC0/online` as `POWER_STATE
+1) First it stores the value from `cat /sys/class/power_supply/AC0/online` as `POWER_STATE`
 2) Then it checks if Hyprland is running correctly. Otherwise you get a `HYPRLAND_INSTANCE_SIGNATURE not set` error.
 3) Next, it checks the value returned from `$POWER_STATE` . If it returns 1, then it knows the laptop is on power, so it runs the `change_refresh_rate()` function with the `MODE_120HZ`resolution. Otherwise, if it's 0, it's with the `MODE_60HZ`resolution.
 
